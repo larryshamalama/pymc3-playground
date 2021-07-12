@@ -14,7 +14,7 @@ from pymc3.distributions.distribution import Continuous
 class StickBreakingWeightsRV(RandomVariable):
     name = "stick_breaking_weights"
     ndim_supp = 1
-    ndims_params = [0]
+    ndims_params = [1]
     dtype = "floatX"
     _print_name = ("Stick-Breaking Weights", "\\operatorname{StickBreakingWeights}")
 
