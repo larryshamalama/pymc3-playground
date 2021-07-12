@@ -16,7 +16,7 @@ class StickBreakingWeightsRV(RandomVariable):
     ndim_supp = 1
     ndims_params = [0]
     dtype = "floatX"
-    _print_name = ("Stick-Breaking W=eights", "\\operatorname{StickBreakingWeights}")
+    _print_name = ("Stick-Breaking Weights", "\\operatorname{StickBreakingWeights}")
 
     def __call__(self, alpha, size=None, **kwargs):
         return super().__call__(alpha, size=size, **kwargs)
@@ -63,7 +63,6 @@ class StickBreakingWeights(Continuous):
 if __name__ == "__main__":
     with pm.Model() as model:
         sbw = StickBreakingWeights("test-sticks", alpha=1)
-        # larry_norm = LarryNormal(name="larrynormal", mu=1, sigma=2)
 
         trace = pm.sample(1000)
         print(trace.to_dict()["posterior"]["test-sticks"][0].mean())
