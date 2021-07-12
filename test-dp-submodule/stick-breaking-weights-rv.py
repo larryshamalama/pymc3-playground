@@ -61,6 +61,11 @@ class StickBreakingWeights(Continuous):
 
 
 if __name__ == "__main__":
+
+    rng = np.random.RandomState(seed=123)
+    print(stickbreakingweights.rng_fn(rng=rng, alpha=1.5, size=[5,]))
+    print("")
+
     with pm.Model() as model:
         sbw = StickBreakingWeights("test-sticks", alpha=1)
 
